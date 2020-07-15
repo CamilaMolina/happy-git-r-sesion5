@@ -1,36 +1,32 @@
----
-title: "Happy Git with R"
-subtitle: "Club de Lectura - Sesión 5"
-institute: "R-Ladies Chile"
-author: "Gaby Sandoval, Camila Molina"
-date: "2020-07-08"
-output:
-    xaringan::moon_reader:
-     transition: slide
-     lib_dir: libs
-     seal: false
-     css:
-      - rladies
-      - rladies-fonts
-     nature:
-      highlightStyle: github
-      highlightLines: true
----
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Happy Git with R</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Gaby Sandoval, Camila Molina" />
+    <meta name="date" content="2020-07-08" />
+    <link href="libs/remark-css-0.0.1/rladies.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/rladies-fonts.css" rel="stylesheet" />
+    <link href="libs/font-awesome-5.3.1/css/fontawesome-all.min.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+
 class: inverse
 
 background-image: url(https://happygitwithr.com/img/watch-me-diff-watch-me-rebase-smaller.png)
 background-position: 90% 30%
 background-size: 40%
 
-</br>
-</br>
+&lt;/br&gt;
+&lt;/br&gt;
 #Happy Git with R
 
-##Club de lectura</br>RLadies Chile </br> Sesión 5
-</br>
-#### Camila Molina [`r icon::fa("twitter")` @calmolinafe](https://https://twitter.com/calmolinafe)
+##Club de lectura&lt;/br&gt;RLadies Chile &lt;/br&gt; Sesión 5
+&lt;/br&gt;
+#### Camila Molina [<i class="fab  fa-twitter "></i> @calmolinafe](https://https://twitter.com/calmolinafe)
 
-#### Gabriela Sandoval [`r icon::fa("twitter")` @GabySandovalM](https://twitter.com/GabySandovalM)
+#### Gabriela Sandoval [<i class="fab  fa-twitter "></i> @GabySandovalM](https://twitter.com/GabySandovalM)
 
 
 #### 08 - julio - 2020
@@ -38,7 +34,7 @@ background-size: 40%
 
 ---
 
-<center><img src="imagenes/GIT.png" width="600" height="600" />
+&lt;center&gt;&lt;img src="imagenes/GIT.png" width="600" height="600" /&gt;
 
 ---
 # Hoy veremos
@@ -57,7 +53,7 @@ background-size: 40%
 * 33 Make a GitHub repo browsable
 
 ---
-# Sección VI 
+# Sección VI
 
 ###Patrones útiles de Git para la vida real
 
@@ -82,19 +78,19 @@ class: inverse, middle
 # Capítulo 26
 
 
-<center><img src="https://miro.medium.com/max/4000/1*J8O2xd9ZqxWr2x6EP4MHmg.png" width="450" height="150" />
+&lt;center&gt;&lt;img src="https://miro.medium.com/max/4000/1*J8O2xd9ZqxWr2x6EP4MHmg.png" width="450" height="150" /&gt;
 
 **¡Siempre puedes volver a una versión más feliz de tu proyecto!**
 
 ---
 
-<center><img src="imagenes/git commit.png" width="650" height="650" />
+&lt;center&gt;&lt;img src="imagenes/git commit.png" width="650" height="650" /&gt;
 
 ---
 
 ###26.1 Analogía de escalada en roca
 
-<center><img src="https://i.gifer.com/2DAN.gif" width="400" height="400" />
+&lt;center&gt;&lt;img src="https://i.gifer.com/2DAN.gif" width="400" height="400" /&gt;
 
 
 **Consejo:** Usa más commits cuando estás en territorio incierto o peligroso.
@@ -113,7 +109,8 @@ class: inverse, middle
 Asegúrese de que su "árbol de trabajo esté limpio" y que esté sincronizado con su control remoto GitHub. `git status` debería mostrar algo como:
 
 
-```{r eval=FALSE}
+
+```r
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -125,7 +122,8 @@ nothing to commit, working tree clean
 
 Imagina que comenzamos en commit C, con commit B anterior y, antes de eso, A:
 
-```{r eval=FALSE}
+
+```r
 ... -- A -- B -- C
 ```
 
@@ -133,7 +131,8 @@ Da un pequeño paso hacia tu objetivo. Vuelva a verificar que su proyecto funcio
 
 Organice esos cambios y comprométase con el mensaje "WIP", que significa "trabajo en progreso".
 
-```{r eval=FALSE}
+
+```r
 git commit -m "WIP"
 ```
 
@@ -141,7 +140,8 @@ El mensaje puede ser cualquier cosa, pero "WIP" es una convención común.
 
 Su historia ahora se ve así:
 
-```{r eval=FALSE}
+
+```r
 A -- B -- C -- WIP*
 ```
 
@@ -150,7 +150,8 @@ A -- B -- C -- WIP*
 Vuelva a verificar si su proyecto aún funciona.
 
 ---
-```{r eval=FALSE}
+
+```r
 git commit --amend --no edit
 ```
 
@@ -158,7 +159,8 @@ La `--no-edit` retiene el mensaje de confirmación actual de "WIP".
 
 **¡No empujes!** Su historia ahora se ve así:
 
-```{r eval=FALSE}
+
+```r
 A -- B -- C -- WIP*
 ```
 
@@ -170,14 +172,16 @@ Una última vez, verifique que su proyecto funcione y que esté dispuesto a comp
 
 Comprometerse, enmendar nuevamente, pero con un mensaje de compromiso real esta vez. Piense en esto como commit D. Push. Haga esto en RStudio o en el shell:
 
-```{r eval=FALSE}
+
+```r
 git commit --amend -m "Implement awesome feature; closes #43"
 git push
 ```
 
 Su historia en GitHub, se ve así:
 
-```{r eval=FALSE}
+
+```r
 A -- B -- C -- D
 ```
 
@@ -187,7 +191,8 @@ A -- B -- C -- D
 
 Imagina que estás en medio de un flujo de trabajo de modificación repetido:
 
-```{r eval=FALSE}
+
+```r
 A -- B -- C -- WIP*
 ```
 
@@ -195,13 +200,15 @@ y realiza algunos cambios que rompen su proyecto. Estos malos cambios aún no se
 
 En Git, desea hacer un restablecimiento completo al estado `WIP*`.
 
-```{r eval=FALSE}
+
+```r
 git reset --hard
 ```
 
 que es implícitamente lo mismo que
 
-```{r eval=FALSE}
+
+```r
 git reset --hard HEAD
 ```
 
@@ -225,13 +232,15 @@ Una vez que haya empujado algo, considérelo escrito en piedra y siga adelante.
 
 Imaginemos que empujó este estado a GitHub por error:
 
-```{r eval=FALSE}
+
+```r
 A -- B -- C -- WIP (85bf30a)
 ```
 
 y procedió `git commit --amend` nuevamente a nivel local, llevando a este estado:
 
-```{r eval=FALSE}
+
+```r
 A -- B -- C -- WIP* (6e884e6)
 ```
 
@@ -239,13 +248,15 @@ Tienes dos opciones:
 
 * Restablezca su repositorio local a C (`git reset --hard HEAD^`)
 
-```{r eval=FALSE}
+
+```r
 A -- B -- C -- WIP (85bf30a)
 ```
 
 * Forzar empuje a Github (`git push --force`)
 
-```{r eval=FALSE}
+
+```r
 A -- B -- C -- WIP* (6e884e6)
 ```
 
@@ -261,10 +272,11 @@ class: inverse, middle
 
 **Problema:** desea enviar cambios a GitHub, pero es rechazado así:
 
-```{r eval=FALSE}
+
+```r
 $ git push
 To https://github.com/YOU/REPO.git
- ! [rejected]        master -> master (fetch first)
+ ! [rejected]        master -&gt; master (fetch first)
 error: failed to push some refs to 'https://github.com/YOU/REPO.git'
 hint: Updates were rejected because the remote contains work that you do
 hint: not have locally. This is usually caused by another repository pushing
@@ -279,13 +291,15 @@ Le sugiero que use `git status` o visite su GitHub en el navegador para obtener 
 
 En resumen, este es el estado en GitHub
 
-```{r eval=FALSE}
+
+```r
 A -- B -- C (on GitHub)
 ```
 
 Y este es tu estado local:
 
-```{r eval=FALSE}
+
+```r
 A -- B -- D (what you have)
 ```
 
@@ -296,7 +310,7 @@ No puede hacer que se produzca algún tipo de fusión en la copia de GitHub cuan
 
 Es posible que haya notado que usted, el autor de D, está jugando con Git más que la persona que se comprometió y empujó C, es decir, su colaborador.
 
-<center><img src="https://4.bp.blogspot.com/-c3X_oYPqMJA/XOLKZ89gEdI/AAAAAAAAALc/R9xGJPtmLn0qmcpNUJCYDfda99wzxT0KwCLcBGAs/s1600/d6vr3cx-4253f449-0bd5-4081-8f42-3f8dec53b0ad.gif" width="300" height="300" /> 
+&lt;center&gt;&lt;img src="https://4.bp.blogspot.com/-c3X_oYPqMJA/XOLKZ89gEdI/AAAAAAAAALc/R9xGJPtmLn0qmcpNUJCYDfda99wzxT0KwCLcBGAs/s1600/d6vr3cx-4253f449-0bd5-4081-8f42-3f8dec53b0ad.gif" width="300" height="300" /&gt; 
 
 ---
 
@@ -304,7 +318,7 @@ Es posible que haya notado que usted, el autor de D, está jugando con Git más 
 
 En general, vale la pena ser proactivamente consciente de lo que otros están haciendo que estar siempre en modo reactivo, aprendiendo sobre el trabajo de su colaborador solo cuando su empuje es rechazado.
 
-<center><img src="imagenes/contacto.png" width="500" height="500" />
+&lt;center&gt;&lt;img src="imagenes/contacto.png" width="500" height="500" /&gt;
 
 ---
 
@@ -312,7 +326,7 @@ En general, vale la pena ser proactivamente consciente de lo que otros están ha
 
 Finalmente, sus primeras experiencias colaborando con otros y con usted mismo `master` le darán una comprensión visceral de por qué la mayoría de los usuarios de Git eventualmente comienzan a usar ramas.
 
-<center><img src="imagenes/ramas.png" width="400" height="250" />
+&lt;center&gt;&lt;img src="imagenes/ramas.png" width="400" height="250" /&gt;
 
 ---
 
@@ -340,7 +354,8 @@ Hay dos escenarios felices, en los que `git pull` simplemente funcionará:
 
 Resumen de estos `git pull` escenarios felices:
 
-```{r eval=FALSE}
+
+```r
                  Remote: A--B--C
 
 Local before 'git pull': A--B--(uncommitted changes)
@@ -353,7 +368,8 @@ Local before 'git pull': A--B--(uncommitted changes)
 
 Si sus cambios afectan un archivo (`foo.R` en el ejemplo a continuación) que también se ha cambiado en commit `C`, no puede hacerlo `git pull`. No hace daño intentarlo, pero fracasarás y se verá más o menos así:
 
-```{r eval=FALSE}
+
+```r
 jenny@2015-mbp ethel $ git pull
 remote: Enumerating objects: 5, done.
 remote: Counting objects: 100% (5/5), done.
@@ -361,7 +377,7 @@ remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 1), reused 1 (delta 0), pack-reused 0
 Unpacking objects: 100% (3/3), done.
 From github.com:jennybc/ethel
-   db046b4..2d33a6f  master     -> origin/master
+   db046b4..2d33a6f  master     -&gt; origin/master
 Updating db046b4..2d33a6f
 error: Your local changes to the following files would be overwritten by merge:
         foo.R
@@ -381,10 +397,11 @@ La opción más simple es buscar los commits desde flujo ascendente y fusionarlo
 
 Aquí está el mejor caso, la versión sin conflictos de fusión de `git pull`:
 
-```{r eval=FALSE}
+
+```r
 jenny@2015-mbp ethel $ git pull
 
-< YOU WILL PROBABLY BE KICKED INTO AN EDITOR HERE RE: MERGE COMMIT MESSAGE! >
+&lt; YOU WILL PROBABLY BE KICKED INTO AN EDITOR HERE RE: MERGE COMMIT MESSAGE! &gt;
 
 Merge made by the 'recursive' strategy.
  README.md | 4 ++--
@@ -432,7 +449,7 @@ Ejemplos:
 
 Aquí es donde realmente brillan GitHub (y GitLab o BitBucket). La capacidad de explorar rápidamente diferentes confirmaciones/estados, cambiar entre ramas, inspeccionar archivos individuales y ver la discusión en temas vinculados es increíblemente poderosa.
 
-<center><img src="imagenes/github-gafas.png" width="310" height="163" />
+&lt;center&gt;&lt;img src="imagenes/github-gafas.png" width="310" height="163" /&gt;
 
 ---
 
@@ -440,7 +457,7 @@ Aquí es donde realmente brillan GitHub (y GitLab o BitBucket). La capacidad de 
 
 Desde la página de destino de su repositorio, acceda al historial de confirmaciones haciendo clic en "confirmaciones xyz". Esto es como usarlo git loglocalmente, pero mucho más gratificante. Si tiene un buen cliente local de Git , probablemente también proporcione una descripción gráfica del historial.
 
-<center><img src="imagenes/github-link-to-commits.png" width="800" height="200" />
+&lt;center&gt;&lt;img src="imagenes/github-link-to-commits.png" width="800" height="200" /&gt;
 
 ---
 
@@ -450,9 +467,9 @@ Una vez que esté viendo el historial, observe tres formas de acceder a más inf
 
 * Haga clic en el SHA-1 abreviado para ver la diferencia asociada con la confirmación.
 
-* Haga clic en los corchetes de doble ángulo `<>` para explorar el estado de todo el repositorio en ese punto de la historia.
+* Haga clic en los corchetes de doble ángulo `&lt;&gt;` para explorar el estado de todo el repositorio en ese punto de la historia.
 
-<center><img src="imagenes/github-commit-listing.png" width="800" height="200" />
+&lt;center&gt;&lt;img src="imagenes/github-commit-listing.png" width="800" height="200" /&gt;
 
 ---
 
@@ -460,7 +477,7 @@ Una vez que esté viendo el historial, observe tres formas de acceder a más inf
 
 ¿Qué pasa si está interesado en cómo un archivo específico llegó a ser como es? Primero navegue hasta el archivo, luego observe "Culpa" e "Historial" en la esquina superior derecha.
 
-<center><img src="imagenes/github-specific-file.png" width="800" height="200" />
+&lt;center&gt;&lt;img src="imagenes/github-specific-file.png" width="800" height="200" /&gt;
 
 ---
 
@@ -468,7 +485,7 @@ Una vez que esté viendo el historial, observe tres formas de acceder a más inf
 
 La búsqueda siempre está disponible en la esquina superior derecha de GitHub.
 
-<center><img src="imagenes/github-repo-search.png" width="800" height="300" />
+&lt;center&gt;&lt;img src="imagenes/github-repo-search.png" width="800" height="300" /&gt;
 
 ---
 
@@ -507,13 +524,15 @@ class: middle
 
 Para hacer el fork también podemos usar el paquete `usethis`
 
-```{r eval = FALSE}
+
+```r
 usethis::create_from_github()
 ```
 
 
 
-```{r eval = FALSE}
+
+```r
 usethis::create_from_github("Owner/REPO",
                             destdir = "~/ruta")
 ```
@@ -569,12 +588,12 @@ You/REPO
 
 **Solución: ** 
 
-> Agregar al **upstream** como un segundo repositorio remoto
+&gt; Agregar al **upstream** como un segundo repositorio remoto
 
 
 ** Recomendación:**
 
-> Hacer el fork, clonar y luego declarar el upstream como un segundo repositorio remoto.
+&gt; Hacer el fork, clonar y luego declarar el upstream como un segundo repositorio remoto.
 
 ---
 background-image: url(imagenes/31master.png)
@@ -587,23 +606,25 @@ Recuerda que ahora estamos trabajando en la copia local de (You/REPO).
 
 * Verifica que la rama activa sea master, es decir, desde: REPO/master
 
-</br>
-</br>
-</br>
-</br>
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;/br&gt;
 
 
 * Verifica que todo este en orden: 
 
 .center[
-```{markdown}
+
+```markdown
 git status
 ```
 ]
 
 Debe aparecer un mensaje como este:
 
-```{markdown}
+
+```markdown
 
 On branch master 
     Your branch is up to date with 'origin/master'.`
@@ -618,24 +639,28 @@ On branch master
 
 Revisar los repositorio remotos actuales:
 
-```{markdown}
+
+```markdown
 git remote -v
 ```
 
 Agregar `Owner/REPO` como upstream remoto:
 
-```{markdown}
+
+```markdown
 git remote add upstream http://github.com/Owner/REPO.git 
 ```
 
 Verificar que está agregado como upstream:
 
-```{markdown}
+
+```markdown
 git remote -v
 ```
 
 Luego de la última línea deberiamos ver algo así:
-```{markdown}
+
+```markdown
 origin    https://github.com/You/REPO.git (fetch)
 origin    https://github.com/You/REPO.git (push)
 upstream  https://github.com/Owner/REPO.git (fetch)
@@ -649,7 +674,8 @@ background-size: 70%
 
 ### Actualizar, en mi copia local, los cambios que hizo `OWNER`.
 
-```{markdown}
+
+```markdown
 git pull upstream master --ff-only
 ```
 
@@ -663,20 +689,22 @@ class: middle
 
 ### Recomendación:
 
-> En este caso (repositorio local producto de fork y clone) no hacer commits desde la rama master, es mejor trabajar desde una nueva rama.
+&gt; En este caso (repositorio local producto de fork y clone) no hacer commits desde la rama master, es mejor trabajar desde una nueva rama.
 
 .center[
 ###**Trabajar en una nueva rama**
 ]
 
 Para crear una nueva rama:
-```{markdown}
+
+```markdown
 git branch nombre 
 ```
 
 Para cerrar la rama (volmemos a master):
 
-```{markdown}
+
+```markdown
 git branch nombre 
 git checkout nombre
 ```
@@ -748,7 +776,7 @@ class: middle
 En esta sección del libro se presentan 3 consejos oficiales de GitHub para la situación antes descrita. Aquí una idea resumen de las 3 versiones:
 
 * **Versión 1:** Hacer **pull** desde la **fork branch** del **PR remote**, para luego hacer las revisiones necesarias. Finalmente, hacer **push** y **merge** cuando todo esta ok.
-</br> </br> Problema: En **parent commit** de la **local branch** no será el **parent commit** de la **PR branch**. (Podría no ser evidente quien hizo la contribución).
+&lt;/br&gt; &lt;/br&gt; Problema: En **parent commit** de la **local branch** no será el **parent commit** de la **PR branch**. (Podría no ser evidente quien hizo la contribución).
 
 * **Versión 2:** Sigue la idea de la versión 1 y además considera un **pull request inactivo** (quien hizo el pull request no responde o elimino el fork).
 
@@ -775,7 +803,7 @@ class: middle
 - Texto plano es lo mejor.
 
 ###¿Hacer o no commit de productos derivados?
-- Por ejemplo: .Rmd --> .md --> .html
+- Por ejemplo: .Rmd --&gt; .md --&gt; .html
 - Algunos dirán que si, otros que no.
 - "Que podamos hacer todo desde cero no significa que queremos hacerlo".
 
@@ -790,7 +818,8 @@ class: middle
 ### RMarkdown
 - Podemos obtener el markdown `.md` intermedio.
 
-```{r eval = FALSE}
+
+```r
 ---
 output:
   html_document:
@@ -807,7 +836,8 @@ class: middle
 
 - Otra opcion es usar un `github document`
 
-```{r eval = FALSE}
+
+```r
 ---
 output: github_document
 ---
@@ -866,3 +896,135 @@ class: inverse center middle
 ##¡Gracias por venir hoy!##
 
 ![](https://media.giphy.com/media/8dYmJ6Buo3lYY/giphy.gif)
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  /* Replace <script> tags in slides area to make them executable
+   *
+   * Runs after post-processing of markdown source into slides and replaces only
+   * <script>s on the last slide of continued slides using the .has-continuation
+   * class added by xaringan. Finally, any <script>s in the slides area that
+   * aren't executed are commented out.
+   */
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container:not(.has-continuation) script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+  var scriptsNotExecuted = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container.has-continuation script'
+  );
+  if (!scriptsNotExecuted.length) return;
+  for (var i = 0; i < scriptsNotExecuted.length; i++) {
+    var comment = document.createComment(scriptsNotExecuted[i].outerHTML)
+    scriptsNotExecuted[i].parentElement.replaceChild(comment, scriptsNotExecuted[i])
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
